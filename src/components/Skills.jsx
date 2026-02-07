@@ -1,19 +1,37 @@
-import React from "react";
-import { skills } from "../data";
+import { data } from "../data";
 
-export default function Skills() {
+function SkillCard({ title, items }) {
   return (
-    <section id="skills" className="container-xxl py-16">
-      <h2 className="text-2xl font-semibold">Skills</h2>
-      <div className="mt-4 card p-6 grid grid-cols-2 md:grid-cols-4 gap-3">
-        {skills.map((s, i) => (
-          <div
-            key={i}
-            className="text-zinc-200 text-sm px-3 py-2 rounded-lg bg-zinc-900/60 border border-zinc-800 transition-all duration-300 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 hover:text-black hover:-translate-y-0.5"
+    <div className="spark-card rounded-2xl border border-zinc-800 bg-zinc-950/60 p-5">
+      <h3 className="mb-3 text-sm font-semibold">{title}</h3>
+      <div className="flex flex-wrap gap-2">
+        {items.map((s) => (
+          <span
+            key={s}
+            className="pill-spark rounded-full border border-zinc-800 bg-zinc-950/60 px-3 py-1 text-xs text-zinc-300"
           >
             {s}
-          </div>
+          </span>
         ))}
+      </div>
+    </div>
+  );
+}
+
+export default function Skills() {
+  const { languages, tools, frameworks } = data.skills;
+
+  return (
+    <section id="skills" className="card p-6 md:p-8">
+      <div className="mb-6 flex items-center gap-4">
+        <h2 className="text-lg font-semibold tracking-tight">Skills</h2>
+        <div className="h-px flex-1 bg-zinc-800" />
+      </div>
+
+      <div className="grid gap-6 md:grid-cols-3">
+        <SkillCard title="Languages" items={languages} />
+        <SkillCard title="Developer Tools" items={tools} />
+        <SkillCard title="Frameworks & Concepts" items={frameworks} />
       </div>
     </section>
   );

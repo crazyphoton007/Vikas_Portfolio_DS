@@ -1,32 +1,32 @@
-import React from "react";
-import { experience } from "../data";
-
-function Item({ item }) {
-  return (
-    <div className="card p-6 transition-all duration-300 hover:bg-gradient-to-r hover:from-zinc-900 hover:to-zinc-800 hover:-translate-y-1 hover:shadow-lg">
-      <div className="flex flex-wrap justify-between gap-2">
-        <h3 className="font-semibold">
-          {item.role} - {item.company}
-        </h3>
-        <span className="text-sm text-zinc-400">{item.period}</span>
-      </div>
-      <div className="text-sm text-zinc-400">{item.location}</div>
-      <ul className="mt-3 list-disc pl-5 space-y-2 text-zinc-200">
-        {item.bullets.map((b, i) => (
-          <li key={i}>{b}</li>
-        ))}
-      </ul>
-    </div>
-  );
-}
+import { data } from "../data";
 
 export default function Experience() {
   return (
-    <section id="experience" className="container-xxl py-16">
-      <h2 className="text-2xl font-semibold mb-4">Experience</h2>
-      <div className="grid gap-6">
-        {experience.map((item, idx) => (
-          <Item item={item} key={idx} />
+    <section id="experience" className="card p-6 md:p-8">
+      <div className="mb-6 flex items-center gap-4">
+        <h2 className="text-lg font-semibold tracking-tight">Experience</h2>
+        <div className="h-px flex-1 bg-zinc-800" />
+      </div>
+
+      <div className="space-y-8">
+        {data.experience.map((job) => (
+          <div key={`${job.company}-${job.title}`} className="space-y-3">
+            <div className="flex flex-col gap-1 md:flex-row md:items-center md:justify-between">
+              <div>
+                <h3 className="font-semibold">{job.title}</h3>
+                <p className="text-sm text-zinc-400">
+                  {job.company} • {job.location}
+                </p>
+              </div>
+              <div className="text-xs text-zinc-500">{job.dates}</div>
+            </div>
+
+            <ul className="list-disc space-y-1 pl-5 text-sm text-zinc-400">
+              {job.bullets.map((b, i) => (
+                <li key={i}>{b}</li>
+              ))}
+            </ul>
+          </div>
         ))}
       </div>
     </section>

@@ -1,11 +1,8 @@
-import React from "react";
-
 export default function Footer() {
   return (
-    <footer className="border-t border-zinc-800 py-10 mt-8">
-      <div className="container-xxl text-sm text-zinc-400">
-        © {new Date().getFullYear()} Vikas Shukla • Built with React & Tailwind
-      </div>
+    <footer className="mt-14 pb-6 text-center text-xs text-zinc-500">
+      <div>© {new Date().getFullYear()} Vikas Shukla</div>
+      <div className="mt-1">Built with React, Vite & Tailwind CSS</div>
     </footer>
   );
 }

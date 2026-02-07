@@ -1,63 +1,106 @@
-import avatar from '/avatar.jpg'; // from public/
-import React from "react";
-import { hero, links } from "../data";
+import { data } from "../data";
 
-export default function Hero() {
+export default function Hero({
+  photoUrl,
+  resumeUrl,
+  githubUrl,
+  linkedinUrl,
+  onOpenEmail,
+}) {
   return (
-    <section id="home" className="container-xxl py-20">
-      <div className="grid md:grid-cols-2 gap-16 items-center">
-        
-        {/* Avatar Left */}
+    <section className="card spark-card p-6 md:p-8">
+      <div className="grid gap-8 md:grid-cols-[auto,1fr] md:items-center">
+        {/* Avatar */}
         <div className="flex justify-center md:justify-start">
-          <div className="
-            w-56 h-56 
-            rounded-full overflow-hidden 
-            border-2 border-zinc-700 
-            shadow-xl 
-            transition-all duration-500
-            hover:scale-105 hover:shadow-[0_0_25px_rgba(255,200,60,0.5)]
-          ">
+          <div className="avatar-pop">
             <img
-              src={avatar}
-              alt="Vikas Shukla"
-              className="w-full h-full object-cover"
+              src={photoUrl}
+              alt={data.name}
+              className="h-40 w-40 rounded-2xl border border-zinc-800 object-cover"
             />
           </div>
         </div>
 
-        {/* Text Right */}
-        <div className="text-center md:text-left">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight whitespace-nowrap">
-            {hero.name}
-            <span className="text-yellow-400"> - {hero.title}</span>
-          </h1>
+        {/* Content */}
+        <div className="space-y-6 text-center md:text-left">
+          <div>
+            <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
+              {data.name}
+            </h1>
 
-          <p className="mt-3 text-sm uppercase tracking-widest text-zinc-400">
-            {hero.location} • Data products, ML models & decision intelligence
+            {/*  FINAL: white "A", bigger, aligned */}
+            <div className="mt-2 flex items-center justify-center md:justify-start gap-3">
+              <span className="text-3xl font-bold text-white">
+                A
+              </span>
+
+              <div className="role-mask">
+                <div className="role-track">
+                  {data.roles.map((r) => (
+                    <span
+                      key={r}
+                      className="text-2xl font-bold text-amber-400"
+                    >
+                      {r}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p className="max-w-2xl text-sm leading-relaxed text-zinc-400">
+            {data.headline}
           </p>
 
-          <p className="mt-6 text-lg text-zinc-300 leading-relaxed">
-            {hero.tagline}
-          </p>
-
-          <div className="mt-8 flex md:justify-start justify-center gap-4 flex-wrap">
+          {/* CTA tiles */}
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
             <a
-              className="btn transition-all duration-300 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 hover:text-black"
-              href="#projects"
-            >
-              View Projects
-            </a>
-            <a
-              className="btn transition-all duration-300 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 hover:text-black"
-              href={links.resume}
+              href={resumeUrl}
               target="_blank"
               rel="noreferrer"
+              className="cta-btn spark-card flex flex-col items-center justify-center gap-1 rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4"
             >
-              Download Resume
+              <span className="cta-ic">📄</span>
+              <span className="text-xs font-medium">Resume</span>
+            </a>
+
+            <button
+              type="button"
+              onClick={onOpenEmail}
+              className="cta-btn spark-card flex flex-col items-center justify-center gap-1 rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4"
+            >
+              <span className="cta-ic">✉️</span>
+              <span className="text-xs font-medium">Email</span>
+            </button>
+
+            <a
+              href={githubUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="cta-btn spark-card flex flex-col items-center justify-center gap-1 rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                className="h-5 w-5 fill-amber-400"
+                aria-hidden="true"
+              >
+                <path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.1 3.29 9.42 7.86 10.95.58.1.79-.25.79-.56v-2.02c-3.2.7-3.87-1.55-3.87-1.55-.53-1.36-1.29-1.72-1.29-1.72-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.04 1.78 2.73 1.27 3.4.97.1-.75.41-1.27.74-1.56-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.3 1.2-3.11-.12-.3-.52-1.5.11-3.13 0 0 .97-.31 3.18 1.19a11.1 11.1 0 0 1 5.79 0c2.2-1.5 3.17-1.19 3.17-1.19.64 1.63.24 2.83.12 3.13.75.81 1.2 1.85 1.2 3.11 0 4.42-2.7 5.39-5.27 5.68.42.37.79 1.1.79 2.22v3.29c0 .31.21.67.8.56A11.52 11.52 0 0 0 23.5 12C23.5 5.74 18.27.5 12 .5z" />
+              </svg>
+              <span className="text-xs font-medium">GitHub</span>
+            </a>
+
+            <a
+              href={linkedinUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="cta-btn spark-card flex flex-col items-center justify-center gap-1 rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4"
+            >
+              <span className="cta-ic font-bold text-amber-400">in</span>
+              <span className="text-xs font-medium">LinkedIn</span>
             </a>
           </div>
         </div>
-
       </div>
     </section>
   );
