@@ -4,21 +4,21 @@
 export const data = {
   name: "Vikas Shukla",
   photo: "avatar.jpg", // public/
-  location: "McLean, VA",
+  location: "Bellevue, WA",
   email: "vikasofficial927@gmail.com",
   github: "crazyphoton007",
   linkedin: "vikas-shukla-48063b78",
-  resumeUrl: "Vikas_Resume.pdf", // public/
+  resumeUrl: "Vikas_Resume_DS.pdf", // public/
 
   // Hero headline (1–2 lines)
   headline:
-    "Data Professional with 7+ years of experience building ML and analytics solutions that support real business decisions from fraud detection to trial analytics to LLM + RAG systems.",
+    "Data Scientist with 7+ years of experience building ML and analytics solutions that support real business decisions from fraud detection to trial analytics to LLM + RAG systems.",
 
   // ✅ Your exact roles (bold + rotating in Hero)
-  roles: ["Data Professional", "Analytics Builder", "Billiards Player"],
+  roles: ["Data Scientist", "Analytics Builder", "Billiards Player"],
 
   about:
-    "Innovative and collaborative Data Professional with 7+ years of experience delivering large-scale analytical and modeling solutions. Detail-oriented with a strong track record of structured execution, insight generation, and data-driven decision support using cloud-scale data platforms.",
+    "Innovative and collaborative Data Scientist with 7+ years of experience delivering large-scale analytical and modeling solutions. Detail-oriented with a strong track record of structured execution, insight generation, and data-driven decision support using cloud-scale data platforms.",
 
   skills: {
     languages: ["Python", "R", "SQL"],
@@ -50,15 +50,16 @@ export const data = {
   experience: [
     {
       company: "Capital One",
-      title: "Sr. Data Analyst",
+      title: "Data Scietist",
       dates: "Oct 2024 – Present",
-      location: "Richmond, VA",
+      location: "Bellevue, WA",
       bullets: [
-        "Engineered unified data reporting solution consolidating multiple sources into streamlined dashboard using Snowflake, Databricks reduced redundancy and manual tasks by 75%, empowering data risk officers in governance.",
-        "Optimized ETL pipeline to slash process time by 97% and transform complex data infrastructure into production-ready datasets.",
-        "Co-developed and rigorously validated robust data model to ensure data integrity and accelerate implementation timelines by 50% through cross-team collaboration and external resource integration.",
-        "Directed root cause analyses for Risk Management to isolate KPI fluctuations and enforce compliance with internal standards and US government Regulations.",
-      ],
+        "Rebuilt transaction risk model using XGBoost and validated performance with decile analysis and Gini coefficient, improving fraud prediction accuracy by 17% and reducing false positives by 22%.",
+        "Built consolidated dataset from 40M+ transactions across multiple systems, enabling self-serve analytics and reducing manual analysis cycles by 60%.",
+        "Designed hybrid ML and rule-based scoring framework to surface early indicators of account compromise, reducing investigation workload by 45 hours per month.",
+        "Defined KPIs and implemented automated SQL monitoring to detect data-quality issues before business impact, reducing weekly metric variance by 20%.",
+        "Partnered with engineering to productionize fraud models and automate thresholds, increasing model adoption to 98%."
+      ]
     },
     {
       company: "Bayer",
