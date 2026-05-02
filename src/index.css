@@ -28,8 +28,8 @@ body {
   min-height: 100%;
   overflow-x: hidden;
   background:
-    linear-gradient(115deg, rgba(34, 211, 238, 0.16), transparent 26%),
-    linear-gradient(245deg, rgba(251, 113, 133, 0.18), transparent 30%),
+    linear-gradient(115deg, rgba(0, 0, 0, 0.16), transparent 26%),
+    linear-gradient(245deg, rgba(251, 113, 134, 0), transparent 30%),
     conic-gradient(from 180deg at 50% -10%, #150b2b, #061824, #09110f, #20100f, #150b2b);
 }
 
@@ -52,7 +52,7 @@ body::before {
   animation: luminous-drift 22s ease-in-out infinite alternate;
 }
 
-body::after {
+/* body::after {
   z-index: -1;
   opacity: 0.42;
   background-image:
@@ -60,6 +60,12 @@ body::after {
     linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
   background-size: 18px 18px;
   mix-blend-mode: screen;
+} */
+
+body::after {
+  z-index: -1;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.55);
 }
 
 * {
@@ -434,3 +440,4 @@ main > section:nth-child(3n) { animation-delay: -5s; }
     scroll-behavior: auto !important;
   }
 }
+/* ===== ADD THIS AT VERY END ONLY ===== */
