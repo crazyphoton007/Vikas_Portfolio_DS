@@ -50,7 +50,7 @@ export const data = {
   experience: [
     {
       company: "Capital One",
-      title: "Data Scietist",
+      title: "Data Science",
       dates: "Oct 2024 – Present",
       location: "Richmond, VA",
       bullets: [
