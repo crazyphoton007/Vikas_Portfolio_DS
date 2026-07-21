@@ -8,7 +8,7 @@ export const data = {
   email: "vikasofficial927@gmail.com",
   github: "crazyphoton007",
   linkedin: "vikas-shukla-48063b78",
-  resumeUrl: "Vikas_Resume.pdf", // public/
+  resumeUrl: "Vikas_Resume_2026_07_21.pdf", // public/
 
   // Hero headline (1–2 lines)
   headline:
