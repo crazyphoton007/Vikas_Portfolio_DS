@@ -1,5 +1,5 @@
 import { data } from "../data";
-import { FileText, Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 function scrollToId(id) {
   const el = document.getElementById(id);
@@ -7,7 +7,7 @@ function scrollToId(id) {
   el.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-export default function Nav({ resumeUrl, githubUrl, linkedinUrl, onOpenEmail }) {
+export default function Nav({ githubUrl, linkedinUrl, onOpenEmail }) {
   const brandLeft = data.location || "USA";
   const brandName = data.name || "Vikas Shukla";
 
@@ -52,17 +52,6 @@ export default function Nav({ resumeUrl, githubUrl, linkedinUrl, onOpenEmail }) 
 
         {/* Right actions */}
         <div className="flex items-center justify-center gap-2 md:justify-end">
-          {/* Resume */}
-          <a
-            className="icon-btn"
-            href={resumeUrl}
-            target="_blank"
-            rel="noreferrer"
-            title="Resume"
-          >
-            <FileText className="h-[18px] w-[18px] text-amber-300" />
-          </a>
-
           {/* Email */}
           <button
             type="button"

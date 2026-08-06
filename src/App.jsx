@@ -41,9 +41,8 @@ export default function App() {
     []
   );
 
-  // assets (pdf + image) should be served from GH pages base
+  // assets should be served from GH pages base
   const photoUrl = useMemo(() => withBasePath(data.photo), []);
-  const resumeUrl = useMemo(() => withBasePath(data.resumeUrl), []);
   const emailText = useMemo(() => String(data.email || "").trim(), []);
   const emailUrl = useMemo(() => (emailText ? `mailto:${emailText}` : ""), [emailText]);
 
@@ -103,7 +102,6 @@ export default function App() {
     <div className="min-h-screen text-zinc-100">
       <div className="container-xxl py-10">
         <Nav
-          resumeUrl={resumeUrl}
           githubUrl={githubUrl}
           linkedinUrl={linkedinUrl}
           onOpenEmail={() => setEmailModalOpen(true)}
@@ -112,7 +110,6 @@ export default function App() {
         <main className="space-y-12 md:space-y-14">
           <Hero
             photoUrl={photoUrl}
-            resumeUrl={resumeUrl}
             githubUrl={githubUrl}
             linkedinUrl={linkedinUrl}
             onOpenEmail={() => setEmailModalOpen(true)}
